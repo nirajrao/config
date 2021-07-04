@@ -1,8 +1,9 @@
-ACTIONS = alacritty neovim zsh powerline
+ACTIONS = alacritty neovim zsh powerline rectangle fzf
+BREWPREFIX := $$(echo $$(brew --prefix))
 
 .PHONY: build $(ACTIONS)
 
-build: alacritty neovim zsh powerline rectangle
+build: $(ACTIONS)
 
 alacritty:
 	brew reinstall --force --cask alacritty
@@ -22,10 +23,12 @@ zsh:
 
 powerline:
 	git clone https://github.com/powerline/fonts.git --depth=1
-	cd fonts
-	./install.sh
-	cd ..
+	./fonts/install.sh
 	rm -rf fonts
 
 rectangle:
 	brew reinstall --force --cask rectangle
+
+fzf:
+	brew reinstall fzf
+	$(BREWPREFIX)/opt/fzf/install
