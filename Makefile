@@ -2,7 +2,7 @@ ACTIONS = alacritty neovim zsh powerline
 
 .PHONY: build $(ACTIONS)
 
-build: alacritty neovim zsh powerline
+build: alacritty neovim zsh powerline rectangle
 
 alacritty:
 	brew reinstall --force --cask alacritty
@@ -26,3 +26,6 @@ powerline:
 	./install.sh
 	cd ..
 	rm -rf fonts
+
+rectangle:
+	brew reinstall --force --cask rectangle
