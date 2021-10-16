@@ -14,7 +14,6 @@ neovim:
 	brew reinstall neovim
 	mkdir -p ~/.config/nvim
 	cp -R -f nvim ~/.config/nvim
-	cp .vimrc ~/.vimrc
 
 zsh:
 	brew reinstall zsh
