@@ -6,7 +6,7 @@ BREWPREFIX := $$(echo $$(brew --prefix))
 build: $(ACTIONS)
 
 alacritty:
-	brew reinstall --force --cask alacritty
+	brew reinstall --force alacritty
 	mkdir -p ~/.config/alacritty
 	cp alacritty.yml ~/.config/alacritty/alacritty.yml
 
